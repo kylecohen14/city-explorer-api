@@ -10,27 +10,26 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 
-// app.get('/test', (req, res) => {
-//   res.send('test here');
 app.get('/weather', (req, res) => {
-  const lat = req.query.lat;
-  const lon = req.query.lon;
-  const searchQuery = req.query.searchQuery;
-  const city = new Forecast(weatherInfo.find (city => city_name.toLowerCase() === searchQuery.toLowerCase()));
-  // const city = weatherInfo.find
-
-  // res.json
+  let lat = req.query.lat;
+  let lon = req.query.lon;
+  let searchQuery = req.query.searchQuery;
+  let city = (weatherInfo.find (city => city.city_name.toLowerCase() === searchQuery.toLowerCase()));
+  
   class Forecast {
     constructor(description, date) {
       this.description = description;
       this.date = date;
-      forcastArray = [];
     }
   }
-  res(200).send(city.forcastArray);
+  let forcastArray = [];
+  city.data.map( (value, idx) => {
+    forcastArray.push(new Forecast(value.datetime, `Low of ${value.low_temp}, high of ${value.high_temp}, with ${value.weather.description}`))
+  })
+  res.send(forcastArray);
 });
 
 app.listen(PORT, () => {
-
-})
+console.log(`Proof of life ${PORT}`);
+});
  
