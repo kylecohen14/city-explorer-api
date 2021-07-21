@@ -1,4 +1,5 @@
 # city-explorer-api
+![Screenshot (182)](https://user-images.githubusercontent.com/84685827/126557100-53cb9105-e8d7-4ad9-bd44-16227d0b6f85.png)
 
 # CITY-EXPLORER-API
 
