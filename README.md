@@ -1,5 +1,7 @@
 # city-explorer-api
 
+![Drawing of WRRC data flow](/mnt/c/Users/kylec/projects/codefellows/code301/lab_assignments/city-explorer-api/Screenshot (182).png)
+
 # CITY-EXPLORER-API
 
 **Author**: kyle Cohen
