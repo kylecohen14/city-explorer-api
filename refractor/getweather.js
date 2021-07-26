@@ -28,15 +28,14 @@ async function getWeather(req, res) {
           let weather = data;
           let forcastArray = weather.data.data.map( (value, idx) => {
             return new Forecast(`Date:${value.datetime}`, `Avg temp of ${value.temp}`, `with ${value.weather.description}`);
-          });
+          })
   cache[key].data = forcastArray;
   console.log(cache[key].data);
   res.send(forcastArray);
-});
+})
     }
     else{
-      res.send(cache[key].data);
-    }
+      res.send(cache[key].data);}
   }
 catch(err) {
   // console.log('error:, err', err);
@@ -44,7 +43,5 @@ catch(err) {
 }
 }
 
-// function badRoute(req, res) {
-  // res.status(500).send('error: something to fix. 500');
- 
+
 module.exports = getWeather;
